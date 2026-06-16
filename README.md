@@ -28,7 +28,5 @@ Cree un classe Utilitaire qui parcourt la class path qui regarde la notation
     on utilise 
     fonction init() : je ne comprend pas bien son role mais ce que j'ai entendue est :
         il initialiser ny projet
-        afficher la liste des classe 
-
-donner petit a petit le code   
+        but final => afficher la liste des classe  Conntroller dans un page au navigateur 
 

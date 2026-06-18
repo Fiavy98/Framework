@@ -4,25 +4,18 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-// rrllbklnbklndb
-////?/ [pkkp[k]]
-/// 
-/// 
-/// 
-/// 
+
 public class ControllerScanner {
 
     public static List<String> scan(String webInfPath) throws Exception {
         List<String> controllers = new ArrayList<>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 
-        // ── 1. Scanner WEB-INF/classes (controllers compilés) ──
         File classesDir = new File(webInfPath + "/classes");
         if (classesDir.exists()) {
             scanDirectory(classesDir, classesDir, classLoader, controllers);
         }
 
-        // ── 2. Scanner WEB-INF/lib (les .jar dont le framework) ──
         File libDir = new File(webInfPath + "/lib");
         if (libDir.exists()) {
             for (File jar : libDir.listFiles()) {
@@ -39,7 +32,6 @@ public class ControllerScanner {
         return controllers;
     }
 
-    // Parcourt un dossier .class
     private static void scanDirectory(File root, File dir,
                                       ClassLoader loader,
                                       List<String> result) {
@@ -59,7 +51,6 @@ public class ControllerScanner {
         }
     }
 
-    // Parcourt un .jar
     private static void scanJar(File jar, ClassLoader loader,
                                  List<String> result) {
         try (java.util.jar.JarFile jarFile = new java.util.jar.JarFile(jar)) {
@@ -73,8 +64,7 @@ public class ControllerScanner {
             }
         } catch (Exception ignored) {}
     }
-
-    // Charge une classe et vérifie @Controller
+    
     private static void tryLoad(String className, ClassLoader loader,
                                  List<String> result) {
         try {

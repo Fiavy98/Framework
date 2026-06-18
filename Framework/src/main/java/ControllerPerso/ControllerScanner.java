@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerScanner {
-    // Scan
-    //
-    //
-    //
     public static List<String> scan(String webInfPath) throws Exception {
         List<String> controllers = new ArrayList<>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();

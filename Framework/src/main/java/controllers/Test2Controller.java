@@ -3,5 +3,5 @@ package controllers;
 import ControllerPerso.Controller;
 
 @Controller
-public class HelloController {
+public class Test2Controller {
 }

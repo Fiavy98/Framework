@@ -51,7 +51,8 @@ echo ""
 echo "✅ Déploiement de $APP_NAME.war terminé dans Tomcat."
 echo "   Redémarrez Tomcat si nécessaire."
 echo ""
-
+echo "⏳ Attente du rechargement Tomcat..."
+sleep 5
 echo "Accueil : http://localhost:8080/Framework-Test/zeze"
 echo "Liste Controlleur  : http://localhost:8080/Framework-Test/LsControlleur"
 

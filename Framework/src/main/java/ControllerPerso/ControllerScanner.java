@@ -6,7 +6,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerScanner {
+    // Scan
+    public static List<String> scan(String webInfPath) throws Exception {
+        List<String> controllers = new ArrayList<>();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 
+        File classesDir = new File(webInfPath + "/classes");
+        if (classesDir.exists()) {
+            scanDirectory(classesDir, classesDir, classLoader, controllers);
+        }
+
+        File libDir = new File(webInfPath + "/lib");
+        if (libDir.exists()) {
+            for (File jar : libDir.listFiles()) {
+                if (jar.getName().endsWith(".jar")) {
+                    URL jarUrl = new URL("jar:file:" + jar.getAbsolutePath() + "!/");
+                    java.net.URLClassLoader jarLoader =
+                        new java.net.URLClassLoader(new URL[]{jarUrl}, classLoader);
+                    scanJar(jar, jarLoader, controllers);
+                    jarLoader.close();
+                }
+            }
+        }
+
+        return controllers;
+    }
+
+    private static void scanDirectory(File root, File dir,
                                       ClassLoader loader,
                                       List<String> result) {
         if (!dir.exists() || !dir.isDirectory()) return;

@@ -21,6 +21,17 @@ fi
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR/WEB-INF/lib"
 
+# ── Compilation des controllers de Test ───────────
+mkdir -p "$BUILD_DIR/WEB-INF/classes"
+find src/ -name "*.java" > sources.txt
+javac -cp "$LIB_DIR/*.jar" -d "$BUILD_DIR/WEB-INF/classes" @sources.txt
+rm sources.txt
+
+if [ $? -ne 0 ]; then
+    echo "❌ Erreur de compilation controllers. Abandon."
+    exit 1
+fi
+
 # Copier le web.xml
 cp "web.xml" "$BUILD_DIR/WEB-INF/"
 
@@ -41,4 +52,6 @@ echo "✅ Déploiement de $APP_NAME.war terminé dans Tomcat."
 echo "   Redémarrez Tomcat si nécessaire."
 echo ""
 
-echo "http://localhost:8080/Framework-Test/zeze"
+echo "Accueil : http://localhost:8080/Framework-Test/zeze"
+echo "Liste Controlleur  : http://localhost:8080/Framework-Test/LsControlleur"
+

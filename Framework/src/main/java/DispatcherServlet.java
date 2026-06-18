@@ -21,7 +21,7 @@ public class DispatcherServlet extends HttpServlet {
         try {
             String webInfPath = getServletContext().getRealPath("/WEB-INF");
             controllers = ControllerScanner.scan(webInfPath);
-            System.out.println("✅ Controllers trouvés : " + controllers);
+            System.out.println("Controllers trouvés : " + controllers);
         } catch (Exception e) {
             throw new ServletException("Erreur scan controllers", e);
         }
@@ -35,7 +35,7 @@ public class DispatcherServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         out.println("<html><body>");
-        out.println("<h2>Controllers détectes</h2>");
+        out.println("<h2>Liste Controllers detectes</h2>");
         out.println("<ul>");
         for (String c : controllers) {
             out.println("<li>" + c + "</li>");

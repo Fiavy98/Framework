@@ -6,8 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 
-@Target(ElementType.TYPE)        // s'applique sur une CLASS
-@Retention(RetentionPolicy.RUNTIME) // lisible au moment de l'exécution
+@Target(ElementType.TYPE)        // cette annotation est appliquer seulement sur les classes
+@Retention(RetentionPolicy.RUNTIME) // lisible au moment de l'execution
 public @interface Controller {
 }
 

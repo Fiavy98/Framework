@@ -31,6 +31,7 @@ public class ControllerScanner {
         return controllers;
     }
 
+    // Scan .class files
     private static void scanDirectory(File root, File dir,
                                       ClassLoader loader,
                                       List<String> result) {

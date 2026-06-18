@@ -15,7 +15,6 @@
         <servlet-class>main.java.DispatcherServlet</servlet-class>
     </servlet>
 
-
     <servlet-mapping>
         <servlet-name>HelloWorldServlet</servlet-name>
         <url-pattern>/zeze</url-pattern>

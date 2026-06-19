@@ -30,3 +30,9 @@ Cree un classe Utilitaire qui parcourt la class path qui regarde la notation
         il initialiser ny projet
         but final => afficher la liste des classe  Conntroller dans un page au navigateur 
 
+## Sprint 2
+    - annotation : @Mapping("url")
+    - target: method
+    => Afficher url miaraka @ Methode sy classe associer aminy (url : Methode->classe)
+        - url fantatra : maneho ny list ny url fantatra rehetra 
+        - url ts fantatra : Exception miteny hoe tsy fantatro io fa reto ihany ho fantatro

@@ -1,7 +1,7 @@
 - Controlleur Personnaliser
     - ControllerPerso
         - Controller.java
-- Classe Utilitaire : qui scan le claspath
+- Classe Utilitaire : qui scan le classpath
     - ControllerPerso
         - ControllerScanner.java
             - scan () : 
@@ -17,7 +17,7 @@
             - Preparer tout dont ce que servlet a besoin avant de recevoir des requete
         - protected void doGet(HttpServletRequest request, HttpServletResponse response)
             - lire leliste deja preparer par init()
-                
+       -          
 Tomcat démarre
     ↓
 init() appelé une fois

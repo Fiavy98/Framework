@@ -5,11 +5,13 @@
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>Application WEB affichant HelloWorld</display-name>
-     <servlet>
+    <display-name>Application WEB Framework</display-name>
+
+    <servlet>
         <servlet-name>HelloWorldServlet</servlet-name>
         <servlet-class>main.java.HelloWorldServlet</servlet-class>
     </servlet>
+    
     <servlet>
         <servlet-name>DispatcherServlet</servlet-name>
         <servlet-class>main.java.DispatcherServlet</servlet-class>
@@ -19,7 +21,6 @@
         <servlet-name>FrontServlet</servlet-name>
         <servlet-class>main.java.FrontServlet</servlet-class>
     </servlet>
-
 
     <servlet-mapping>
         <servlet-name>HelloWorldServlet</servlet-name>
@@ -33,8 +34,7 @@
 
     <servlet-mapping>
         <servlet-name>FrontServlet</servlet-name>
-        <url-pattern>/FrontServlet</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
-

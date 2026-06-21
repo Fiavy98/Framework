@@ -33,6 +33,7 @@ Cree un classe Utilitaire qui parcourt la class path qui regarde la notation
 ## Sprint 2
 - annotation : @Mapping("url")
 - target: method
-- => **Afficher url miaraka @ Methode sy classe associer aminy (url : Methode->classe)**
-    - url fantatra : maneho ny list ny url fantatra rehetra 
-    - url ts fantatra : Exception miteny hoe tsy fantatro io fa reto ihany ho fantatro
+- => **Afficher url avec Methode et son classe associer  (url : Methode->classe)**
+    - url qu on connait : affiche tous le liste d'url qu on connait  
+    - url qu on ne connait pas  : Erreur Exception qui dit qu il ne connait pas cette url 
+    et il liter le url qu il connait 

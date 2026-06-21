@@ -15,6 +15,12 @@
         <servlet-class>main.java.DispatcherServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>FrontServlet</servlet-name>
+        <servlet-class>main.java.FrontServlet</servlet-class>
+    </servlet>
+
+
     <servlet-mapping>
         <servlet-name>HelloWorldServlet</servlet-name>
         <url-pattern>/zeze</url-pattern>
@@ -23,6 +29,11 @@
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/LsControlleur</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FrontServlet</servlet-name>
+        <url-pattern>/FrontServlet</url-pattern>
     </servlet-mapping>
 
 </web-app>

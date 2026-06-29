@@ -37,3 +37,32 @@ Cree un classe Utilitaire qui parcourt la class path qui regarde la notation
     - url qu on connait : affiche tous le liste d'url qu on connait  
     - url qu on ne connait pas  : Erreur Exception qui dit qu il ne connait pas cette url 
     et il liter le url qu il connait 
+
+## Sprint 3
+- 3a : Gestion de GET/POST dans le mapping 
+    - GET  /andrana  → afficher une page
+    - POST /andrana  → traiter un formulaire
+
+    ex: @RequestMapping("/test","GET")
+        @RequestMapping("/test","POST")
+        Map<url,MethodeInfo> 
+            - Methode 1 : Concatener l'url
+                Map<String, MappingInfo>
+                - "GET:andrana"  → MappingInfo(TestController, andrana())
+                - "POST:andrana" → MappingInfo(TestController, sauvegarder())
+        
+            - Methode 2 : cree un autre class :  urlMethode 
+                - methode il faut surcharger un methode equals pour l'attribue methode
+                C'est a dire l'annotation @RequestMapping doit prendre une deuxieme attribute methode   
+
+                Map<UrlMethode, MappingInfo>
+                UrlMethode("andrana","GET")  → MappingInfo(TestController, andrana())
+                UrlMethode("andrana","POST") → MappingInfo(TestController, sauvegarder())
+
+
+- 3b excecuter methode (appeler par l'url)
+    => println afficher dans console
+
+Pour voir le resultat dans console
+cd /home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16/bin
+./catalina.sh run

@@ -64,5 +64,16 @@ Cree un classe Utilitaire qui parcourt la class path qui regarde la notation
     => println afficher dans console
 
 Pour voir le resultat dans console
-cd /home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16/bin
-./catalina.sh run
+Tsinjo@kamado-X550VC:~/Tomcat/tomcat/apache-tomcat-10.0.16/bin$ ./catalina.sh start
+Using CATALINA_BASE:   /home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16
+Using CATALINA_HOME:   /home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16
+Using CATALINA_TMPDIR: /home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16/bin/bootstrap.jar:/home/kamado/Tomcat/tomcat/apache-tomcat-10.0.16/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Tomcat started.
+Tsinjo@kamado-X550VC:~/Tomcat/tomcat/apache-tomcat-10.0.16/bin$ tail -f ../logs/catalina.out
+
+
+cd ~/ITU/S4/WEB_DINAMIQUE/TestFramework/Framework && ./deployTest.sh
+cd ../Test && ./deployTomcat.sh

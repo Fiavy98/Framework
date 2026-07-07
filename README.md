@@ -77,3 +77,30 @@ Tsinjo@kamado-X550VC:~/Tomcat/tomcat/apache-tomcat-10.0.16/bin$ tail -f ../logs/
 
 cd ~/ITU/S4/WEB_DINAMIQUE/TestFramework/Framework && ./deployTest.sh
 cd ../Test && ./deployTomcat.sh
+
+
+## SPRINT 5
+SPRINT 5: Comment envoyer les donner vers une vue 
+    Exemple : dans spring mvc :
+    
+    @GetMapping("/secretariat/profil/{id}")
+    public String profil(@PathVariable Integer id, Model model) {
+        model.addAttribute("eleve", eleveService.getProfil(id));
+        model.addAttribute("pageTitle", "Profil de l'Élève");
+        return "Secretaire/profil_eleve";
+    }
+    
+
+    methode : class ModelView : String viewName, Map<String, Object> data
+    ┌─────────────────────────────────────────────────────┐
+    │                    ModelView                        │
+    │  ┌─────────────┐  ┌─────────────────────────────┐   │
+    │  │ viewName    │  │ Map<String, Object> data    │   │
+    │  │ "mappings"  │  │  "message" → "Hello"        │   │
+    │  └─────────────┘  │  "timestamp" → Date         │   │
+    │                    │  "eleve" → Eleve           │  │
+    │                    └─────────────────────────────┘  │
+    └─────────────────────────────────────────────────────┘
+    
+    Il faut conctaner le /eemp/list en /emp/list.jsp
+mp/list en /emp/list.jsp

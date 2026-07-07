@@ -5,7 +5,7 @@ APP_NAME="HelloWorldServlet"
 SRC_DIR="src/main/java"
 BUILD_DIR="build"
 LIB_DIR="lib"
-OUTPUT_DIR="../Test/lib"
+OUTPUT_DIR="../Test/WEB-INF/lib"  
 SERVLET_API_JAR="$LIB_DIR/servlet-api.jar"
 
 # ── Nettoyage ─────────────────────────────────────
@@ -27,10 +27,10 @@ cd "$BUILD_DIR/classes" || exit
 jar -cvf "../../$BUILD_DIR/$APP_NAME.jar" .
 cd ../..
 
-# ── Copie dans Test/lib/ ──────────────────────────
+# ── Copie dans Test/WEB-INF/lib/ ──────────────────────────
 mkdir -p "$OUTPUT_DIR"
 cp -f "$BUILD_DIR/$APP_NAME.jar" "$OUTPUT_DIR/"
 
 echo ""
-echo "✅ $APP_NAME.jar → Test/lib/"
+echo "✅ $APP_NAME.jar → Test/WEB-INF/lib/"  
 echo ""
